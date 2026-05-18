@@ -81,20 +81,20 @@
             background-color: #ffffff;
         }
 
-        /* 主體內容區塊 - 強化絕對置中控制 */
+        /* 主體內容區塊 */
         .content {
             flex: 1;
             width: 100%;
-            max-width: 414px; /* 對齊 iPhone 標準寬度欄位 */
+            max-width: 414px; 
             display: flex;
             flex-direction: column;
-            align-items: center; /* 水平置中 */
-            text-align: center;  /* 確保純文字元素置中 */
+            align-items: center; 
+            text-align: center;  
             padding: 0 24px;
             position: relative;
         }
 
-        /* iOS 版本號 - 維持靠右 */
+        /* iOS 版本號 */
         .ios-version {
             align-self: flex-end;
             font-size: 13px;
@@ -104,7 +104,7 @@
             font-weight: 500;
         }
 
-        /* 修正：結束時間微調小 */
+        /* 結束時間 */
         .end-time {
             font-size: 23px;
             font-weight: bold;
@@ -113,18 +113,18 @@
             width: 100%;
         }
 
-        /* 修正：任務模式字體大小下修、精準置中 */
+        /* 修正：「任務模式」大字直接減半縮小、調薄一倍 */
         .title-banner {
-            font-size: 64px; /* 從 74px 調小 */
-            font-weight: bold;
+            font-size: 32px;      /* 從 64px 縮小一倍 */
+            font-weight: 300;      /* 從 bold(700) 調細一倍至 Light 細體 */
             margin-top: 14px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             width: 100%;
         }
 
-        /* 修正：當下手機時間調小 */
+        /* 當下手機時間 */
         .current-time {
-            font-size: 30px; /* 從 34px 調小 */
+            font-size: 30px; 
             font-weight: bold;
             margin-top: 10px;
             letter-spacing: 0.2px;
@@ -138,7 +138,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            padding: 0 28px; /* 寬度微調窄 */
+            padding: 0 28px; 
         }
 
         .btn {
@@ -163,116 +163,4 @@
             margin-right: 8px;
         }
 
-        .dot-green { background-color: #7ee36b; opacity: 0.6; }
-        .dot-red { background-color: #ff3b30; }
-
-        /* 管制標籤白框 - 微調窄符合比例 */
-        .tag-box {
-            background-color: #ffffff;
-            width: 80%;
-            border-radius: 18px;
-            padding: 14px 10px;
-            margin-top: 45px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* 修正：白框內字體微調小 */
-        .tag-text {
-            font-size: 18px;
-            font-weight: bold;
-            color: #000000;
-            line-height: 1.4;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .tag-id {
-            font-size: 27px;
-            font-weight: bold;
-            color: #000000;
-            margin-top: 4px;
-            letter-spacing: 0.5px;
-            font-family: Arial, sans-serif;
-        }
-
-        /* 下方詳細資訊 - 置中補正 */
-        .info-footer {
-            width: 100%;
-            text-align: center;
-            position: absolute;
-            bottom: 25px;
-            font-size: 16.5px;
-            font-weight: bold;
-            line-height: 1.4;
-        }
-
-        .warning-text {
-            color: #ff3b30;
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 4px;
-            letter-spacing: 4px;
-            text-indent: 4px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="navbar-placeholder"></div>
-    <div class="navbar">
-        <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        國軍MDM V8.1
-    </div>
-
-    <div class="content">
-        <div class="ios-version">iOS:26.4.2</div>
-        <div class="end-time">結束時間:115/5/15 12:00</div>
-        <div class="title-banner">任務模式</div>
-        
-        <div class="current-time" id="liveClock">05/18 08:06:09</div>
-
-        <div class="btn-container">
-            <div class="btn btn-lock">
-                <span class="dot dot-green"></span>上鎖：進入管制模式
-            </div>
-            <div class="btn btn-unlock">
-                <span class="dot dot-red"></span>解鎖：離開管制模式
-            </div>
-        </div>
-
-        <div class="tag-box">
-            <div class="tag-text">國軍營內民用通信</div>
-            <div class="tag-text">資訊器材管制標籤</div>
-            <div class="tag-id">C228919127</div>
-        </div>
-
-        <div class="info-footer">
-            <div>上鎖時間：115/04/29 07:23:59</div>
-            <div>設定檔：V2.0 (02/22 15:35:58)</div>
-            <div class="warning-text">仿冒必究</div>
-        </div>
-    </div>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const date = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            
-            document.getElementById('liveClock').textContent = `${month}/${date} ${hours}:${minutes}:${seconds}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
-</body>
-</html>
+        .dot-green { background-color:
