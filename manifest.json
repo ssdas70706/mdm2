@@ -1,0 +1,8 @@
+{
+  "name": "國軍MDM V8.1",
+  "short_name": "國軍MDM",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#53c643",
+  "theme_color": "#000000"
+}
